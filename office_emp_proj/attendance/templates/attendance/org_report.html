@@ -1,0 +1,49 @@
+<!-- templates/attendance/org_report.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organization Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="mb-4">Organization-Wide Report</h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        Attendance Summary
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for record in attendance_summary %}
+                            <li class="list-group-item">
+                                {{ record.employee__first_name }} - {{ record.total_days }} days
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No attendance data available.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        Leave Summary
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for record in leave_summary %}
+                            <li class="list-group-item">
+                                {{ record.employee__first_name }} - {{ record.total_leaves }} leaves
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No leave data available.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

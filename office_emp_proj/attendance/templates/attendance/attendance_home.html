@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        a.button {
+            text-align: center;
+            display: block;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Attendance Management Dashboard</h2>
+
+    <div class="button-container">
+        <a href="{% url 'mark_attendance_page' %}" class="button">Mark Attendance</a>
+        <a href="{% url 'apply_leave_page' %}" class="button">Apply for Leave</a>
+        
+        <a href="{% url 'organization_report' %}" class="button">Organization Attendance Report</a>
+        <a href="{% url 'org-leave-report' %}" class="button">Organization Leave Report</a>
+        <a href="{% url 'manage-leaves' %}" class="button">Manage Leave Requests</a>
+    </div>
+</div>
+</body>
+</html>

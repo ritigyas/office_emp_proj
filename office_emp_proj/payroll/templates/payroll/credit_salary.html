@@ -1,0 +1,16 @@
+<!-- credit_salary.html -->
+{% extends 'payroll/base.html' %}
+{% block title %}Credit Salary{% endblock %}
+{% block content %}
+<h2>Credit Salary (Generate Payslip)</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="emp_id">Employee ID:</label>
+    <input type="number" name="emp_id" required>
+    <button type="submit">Generate Payslip</button>
+</form>
+
+{% for message in messages %}
+    <p class="message">{{ message }}</p>
+{% endfor %}
+{% endblock %}

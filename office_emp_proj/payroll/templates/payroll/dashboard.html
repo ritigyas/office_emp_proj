@@ -1,0 +1,10 @@
+{% extends 'payroll/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Payroll Dashboard</h2>
+<ul>
+    <li><a href="{% url 'view_salary_breakup' %}">View Salary Breakup</a></li>
+    <li><a href="{% url 'credit_salary' %}">Credit Salary (Generate Payslip)</a></li>
+    <li><a href="{% url 'payslip_history' %}">Salary Credit History</a></li>
+</ul>
+{% endblock %}

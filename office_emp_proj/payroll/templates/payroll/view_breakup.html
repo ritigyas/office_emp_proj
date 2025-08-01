@@ -1,0 +1,30 @@
+
+<!-- view_breakup.html -->
+{% extends 'payroll/base.html' %}
+{% block title %}View Salary Breakup{% endblock %}
+{% block content %}
+<h2>View Salary Breakup</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="emp_id">Employee ID:</label>
+    <input type="number" name="emp_id" required>
+    <button type="submit">Fetch</button>
+</form>
+
+{% if breakup %}
+    <h3>Salary Breakup for {{ breakup.employee.first_name }} {{ breakup.employee.last_name }}</h3>
+    <ul>
+        <li><strong>Basic:</strong> ₹{{ breakup.basic }}</li>
+        <li><strong>HRA:</strong> ₹{{ breakup.hra }}</li>
+        <li><strong>Income Tax:</strong> ₹{{ breakup.income_tax }}</li>
+        <li><strong>Deductions:</strong> ₹{{ breakup.deductions }}</li>
+        <li><strong>Gross Salary:</strong> ₹{{ breakup.gross_salary }}</li>
+        <li><strong>Net Salary:</strong> ₹{{ breakup.net_salary }}</li>
+    </ul>
+{% endif %}
+
+{% for message in messages %}
+    <p class="message">{{ message }}</p>
+{% endfor %}
+{% endblock %}
+

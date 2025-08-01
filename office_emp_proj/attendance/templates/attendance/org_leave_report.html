@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Organization-wide Leave Report</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e9f5ff;
+    }
+
+    td {
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      tr {
+        margin-bottom: 15px;
+      }
+
+      th {
+        background-color: transparent;
+        color: #007bff;
+        padding-top: 10px;
+      }
+
+      td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: #555;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Organization-wide Leave Report</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Category</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Status</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for l in leaves %}
+      <tr>
+        <td>{{ l.employee.first_name }} {{ l.employee.last_name }}</td>
+        <td>{{ l.category }}</td>
+        <td>{{ l.start_date }}</td>
+        <td>{{ l.end_date }}</td>
+        <td>{{ l.status }}</td>
+        <td>{{ l.reason }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
