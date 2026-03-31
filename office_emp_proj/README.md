@@ -51,35 +51,19 @@ office_emp_proj/
 ```bash
 git clone https://github.com/ritigyas/office_emp_proj.git
 cd office_emp_proj
-```
-
-2. **Create virtual environment (optional but recommended)**
-```bash
+2. Create virtual environment (optional but recommended)
 python -m venv venv
 venv\Scripts\activate   # Windows
 source venv/bin/activate # Mac/Linux
-```
-
-3. **Install dependencies**
-``bash
+3. Install dependencies
 pip install django
-```
-
-4. **Run migrations**
-``bash
+4. Run migrations
 python manage.py migrate
-```
-
-5. **Start the server**
-```bash
+5. Start the server
 python manage.py runserver
-```
-
-6. **Open in browser:**
-``bash
+6. Open in browser:
 http://127.0.0.1:8000/
 ```
-
 ## 🔑 Admin Access
 
 Create a superuser to access the admin panel:
