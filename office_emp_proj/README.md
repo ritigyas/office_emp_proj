@@ -51,17 +51,28 @@ office_emp_proj/
 ```bash
 git clone https://github.com/ritigyas/office_emp_proj.git
 cd office_emp_proj
+```
+
 2. Create virtual environment (optional but recommended)
+```bash
 python -m venv venv
 venv\Scripts\activate   # Windows
 source venv/bin/activate # Mac/Linux
-3. Install dependencies
+```
+4. Install dependencies
+```bash
 pip install django
-4. Run migrations
+```
+5. Run migrations
+```bash
 python manage.py migrate
-5. Start the server
+```
+6. Start the server
+```bash
 python manage.py runserver
-6. Open in browser:
+```
+7. Open in browser:
+```bash
 http://127.0.0.1:8000/
 ```
 ## 🔑 Admin Access
